@@ -1,0 +1,21 @@
+body {
+    background-color: lightgray;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content: center;
+}
+
+.form_container, .users_container {
+    box-shadow: 0 0 6px rgb(0 0 0 / 20%);
+    margin-top: 2rem;
+    padding: 2rem;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    min-width: 90px;
+}

@@ -1,0 +1,22 @@
+home:
+  user:
+    creation: Créer un utilisateur
+    firstName: Prénom
+    lastName: Nom
+    birthdate: Date de naissance
+    Active_users: Utilisateurs actifs
+    actions:
+      create: Créer utilisateur
+      delete: Supprimer
+      edit: modifier
+  toast:
+    user_created: Utilisateur créer !
+    user_updated: Utilisateur mis à jour !
+    user_deleted: Utilisateur supprimé !
+    user_not_found: No user found !
+  modal:
+    title: Confirmation de suppression
+    message: voulez vous supprimer cet utilisateur ?
+    buttons:
+      close: Fermer
+      delete: Supprimer

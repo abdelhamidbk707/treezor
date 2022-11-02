@@ -1,0 +1,22 @@
+home:
+  user:
+    creation: Create User
+    firstName: Firstname
+    lastName: Lastname
+    birthdate: Date of birth
+    Active_users: Active users
+    actions:
+      create: Create user
+      delete: Delete
+      edit: Edit
+  toast:
+    user_created: User created successfully !
+    user_updated: User updated successfully !
+    user_deleted: User deleted successfully !
+    user_not_found: Utilisateur introuvable
+  modal:
+    title: Delete confirmation
+    message: Are you sure you want to delete this user ?
+    buttons:
+      close: Close
+      delete: Delete

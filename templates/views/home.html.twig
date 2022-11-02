@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include('modals/delete_modal.html.twig') %}
+    {% include "modals/_toasts.html.twig" %}
+
+    <div class="container">
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="col-4 alert alert-{{ label }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+        <div class="form_container">
+            <h2 class="text-center mb-4"> {{ "home.user.creation"|trans }}</h2>
+            <div class="row">
+                <div class="col">
+                    {{ form_start(form) }}
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            {{ form_row(form.firstName) }}
+                        </div>
+                        <div class="col-6">
+                            {{ form_row(form.lastName) }}
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            {{ form_row(form.birthdate) }}
+                        </div>
+                        <div class="col-6">
+                            {{ form_row(form.email) }}
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col text-center">
+                            {{ form_widget(form.save) }}
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="users_container">
+            <div class="row">
+                <h2 class="text-center mb-4">{{ "home.user.Active_users"|trans }}</h2>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">{{ "home.user.firstName"|trans }}</th>
+                        <th scope="col">{{ "home.user.lastName"|trans }}</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                    </thead>
+                    {% for user in users %}
+                        <tr>
+                            <td> {{ user.firstname }}</td>
+                            <td> {{ user.lastname }}</td>
+                            <td> {{ user.email }}</td>
+                            <td>
+                                <button type="button" data-href="{{ path('delete', {'id': user.id}) }}"
+                                        class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                                    {{ "home.user.actions.delete"|trans }}
+                                </button>
+                                <a class="btn btn-warning" href="{{ path('edit', {'id': user.id}) }}">{{ "home.user.actions.edit"|trans }}</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
